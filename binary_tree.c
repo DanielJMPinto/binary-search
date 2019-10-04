@@ -9,7 +9,7 @@
 // empirical study of random ordered binary trees
 //
 
-#include <math.h>
+#include <math.h> 
 #include <stdio.h>
 #include <stdlib.h>
 #include "elapsed_time.h"
@@ -22,29 +22,45 @@
 //
 //   tree_node *root = NULL;
 //
-
+/**
+ * @brief A structure with pointers to the branches/nodes of a binary tree.
+ * 
+ * Each node of the ordered binary tree will store a long integer.
+ *
+ */
 typedef struct tree_node
 {
-  struct tree_node *left;   // pointer to the left branch (a sub-tree)
-  struct tree_node *right;  // pointer to the right branch (a sub-tree)
-  struct tree_node *parent; // pointer to the parent node (NULL for the root of the tree)
-  long data;                // the data item (we use a long here)
+  /*! pointer to the left branch (a sub-tree)*/
+  struct tree_node *left;   
+  /*! pointer to the right branch (a sub-tree)*/
+  struct tree_node *right;  
+  /*! pointer to the parent node (NULL for the root of the tree) */
+  struct tree_node *parent; 
+  /*! the content of a node*/
+  long data;                
 }
 tree_node;
 
 
-//
-// insert a node in the tree (it is assumed that the tree does not store repeated data)
-//
 // use it as follows (example):
 //
 //   insert_node(&root,&new_node);
 //
 
+/**
+ * 
+ * @brief The insert_node() function is used to insert a node in the tree.
+ * 
+ * It is assumed that the tree does not store repeated data
+ * 
+ * @param *link pointer to a node
+ * @param n a node to be inserted
+ */
 static void insert_node(tree_node **link,tree_node *n)
 {
-  tree_node *parent;
-
+  
+  tree_node *parent; 
+  
   parent = NULL;
   while(*link != NULL)
   {
@@ -71,8 +87,14 @@ static void insert_node(tree_node **link,tree_node *n)
 //
 // pointer == NULL
 
+/*! static variable that stores the number of leaves of the tree */
 static int leaves;
 
+/**
+ * @brief The count_leaves() function is used to count the number of leaves of the tree.
+ * 
+ * @param link pointer to a node
+ */
 static int count_leaves(tree_node *link)
 {
   // TO DO: delete the next line of code and place your code here
@@ -100,8 +122,17 @@ static int count_leaves(tree_node *link)
 //
 //   int height = tree_height(root);
 //
+
+/*! static variable that stores the height on the left side of the tree */
 static int height_left;
+/*! static variable that stores the height on the left side of the tree */
 static int height_right;
+
+/**
+ * @ brief The tree_height() function is used to measure the height of the tree.
+ * 
+ * @param link pointer to a node
+ */
 static int tree_height(tree_node *link)
 {
   // TO DO: delete the next line of code and place your code here
@@ -141,7 +172,15 @@ static int tree_height(tree_node *link)
 //   tree_node *node = search_tree(root,data);
 //
 
+/*! static variable that stores the number of nodes found while searching for a specific one */
 static int search_counter;
+
+/**
+ * @brief The search_tree() function is used to search for data in the tree 
+ * 
+ * @param *link pointer to a node
+ * @param data
+ */
 
 tree_node *search_tree(tree_node *link,long data)
 {
@@ -165,7 +204,17 @@ tree_node *search_tree(tree_node *link,long data)
 //   double average_calls_on_hit = (double)count_function_calls_on_hit(root,0) / (double)number_of_nodes;
 //   double average_calls_on_miss = (double)count_function_calls_on_miss(root,0) / (double)number_of_nodes;
 //
+
+/*! static variable that stores the cost of searching for an item */
 static int cost;
+
+
+/**
+ * @brief The count_function_calls_on_hit() function is used to count the number of times of when calling the function, *link points to a non NULL value
+ * 
+ * @param *link pointer to a node
+ * @param level tree height level
+ */
 static int count_function_calls_on_hit(tree_node *link,int level)
 {
   // TO DO: delete the next line of code and place your code here
@@ -180,6 +229,12 @@ static int count_function_calls_on_hit(tree_node *link,int level)
   return cost;
 }
 
+/**
+ * @brief The count_function_calls_on_miss() function is used to count the number of times of when calling the function, *link points to a NULL value
+ * 
+ * @param *link pointer to a node
+ * @param level tree height level
+ */
 static int count_function_calls_on_miss(tree_node *link,int level)
 {
   // TO DO: delete the next line of code and place your code here
@@ -206,7 +261,7 @@ static int count_function_calls_on_miss(tree_node *link,int level)
 //   rand_perm(n,&a[0]);
 //
 
-static void rand_perm(int n,int *a)
+/*static void rand_perm(int n,int *a)
 {
   int i,j,k;
 
@@ -219,13 +274,15 @@ static void rand_perm(int n,int *a)
     a[i] = a[j];
     a[j] = k;
   }
-}
+}*/
 
 
 //
 // main program
 //
-
+/**
+ * @brief Main program
+ */
 int main(int argc,char **argv)
 {
   int details = (argc == 3 && argv[1][0] == '-' && argv[1][1] == 'a' && atoi(argv[2]) > 0) ? 1 : 0;
@@ -252,7 +309,7 @@ int main(int argc,char **argv)
     //
     // the example in the slides
     //
-    if(n == 10)
+    if(n == 5)
     {
       root = NULL;
       nodes[0].data = 3l; insert_node(&root,&nodes[0]);
@@ -304,7 +361,7 @@ int main(int argc,char **argv)
     for(int n_experiment = 0;n_experiment < n_experiments;n_experiment++)
     {
       
-      rand_perm(n,&a[0]);
+      //rand_perm(n,&a[0]);
       root = NULL;
       for(int i = 0;i < n;i++)
       {

@@ -10,6 +10,12 @@
 //   dt = elapsed_time();
 //
 
+/**
+ *  @brief elapsed_time.h is a file used to measure the time of execution of a program.
+ *
+ */
+
+
 #if defined(__linux__) || defined(__APPLE__)
 
 //
@@ -17,16 +23,19 @@
 //
 
 #include <time.h>
-
+/**
+ *  @brief Elapsed Time.
+ */
 double elapsed_time(void)
 {
+
   static struct timespec last_time,current_time;
 
   last_time = current_time;
-  if(clock_gettime(CLOCK_PROCESS_CPUTIME_ID,&current_time) != 0)  // the first argument could also be CLOCK_REALTIME
-    return -1.0; // clock_gettime() failed!!!
+  if(clock_gettime(CLOCK_PROCESS_CPUTIME_ID,&current_time) != 0)  /*! the first argument could also be CLOCK_REALTIME */
+    return -1.0; /*!< If clock_gettime() fails, returns -1 */ 
   return ((double)current_time.tv_sec - (double)last_time.tv_sec) +
-         1.0e-9 * ((double)current_time.tv_nsec - (double)last_time.tv_nsec);
+         1.0e-9 * ((double)current_time.tv_nsec - (double)last_time.tv_nsec); /*!returns the elapsed time */
 }
 
 #endif
@@ -39,7 +48,9 @@ double elapsed_time(void)
 //
 
 #include <windows.h>
-
+/**
+ *  @brief Elapsed Time.
+ */
 double elapsed_time(void)
 {
   static LARGE_INTEGER frequency,last_time,current_time;
@@ -52,7 +63,7 @@ double elapsed_time(void)
   }
   last_time = current_time;
   QueryPerformanceCounter(&current_time);
-  return (double)(current_time.QuadPart - last_time.QuadPart) / (double)frequency.QuadPart;
+  return (double)(current_time.QuadPart - last_time.QuadPart) / (double)frequency.QuadPart; /*!returns the elapsed time */
 }
 
 #endif
