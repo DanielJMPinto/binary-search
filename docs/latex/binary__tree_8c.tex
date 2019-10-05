@@ -1,0 +1,205 @@
+\hypertarget{binary__tree_8c}{}\doxysection{src/binary\+\_\+tree.c File Reference}
+\label{binary__tree_8c}\index{src/binary\_tree.c@{src/binary\_tree.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}elapsed\+\_\+time.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtree__node}{tree\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em A structure with pointers to the branches/nodes of a binary tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtree__node}{tree\+\_\+node}} \mbox{\hyperlink{binary__tree_8c_aa66657f75d8f7c468b5dcc6dd923b0b9}{tree\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em A structure with pointers to the branches/nodes of a binary tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{binary__tree_8c_a198771fac24ab0346f447462d3a559a5}{insert\+\_\+node}} (\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$$\ast$link, \mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{binary__tree_8c_a198771fac24ab0346f447462d3a559a5}{insert\+\_\+node()}} function is used to insert a node in the tree. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{binary__tree_8c_afabb799b3f3aad726ca32c4f3c76b839}{count\+\_\+leaves}} (\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$link)
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{binary__tree_8c_afabb799b3f3aad726ca32c4f3c76b839}{count\+\_\+leaves()}} function is used to count the number of leaves of the tree. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{binary__tree_8c_a90064bfa0b89a9ea3b5a2294e002346f}{tree\+\_\+height}} (\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$link)
+\item 
+\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$ \mbox{\hyperlink{binary__tree_8c_aa172cba2b4c4376a31441d3bb78b6868}{search\+\_\+tree}} (\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$link, long data)
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{binary__tree_8c_aa172cba2b4c4376a31441d3bb78b6868}{search\+\_\+tree()}} function is used to search for data in the tree. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{binary__tree_8c_ab971ba184d219d34538de8f5671a6a7f}{count\+\_\+function\+\_\+calls\+\_\+on\+\_\+hit}} (\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$link, int level)
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{binary__tree_8c_ab971ba184d219d34538de8f5671a6a7f}{count\+\_\+function\+\_\+calls\+\_\+on\+\_\+hit()}} function is used to count the number of times of when calling the function, $\ast$link points to a non N\+U\+LL value. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{binary__tree_8c_af19e7f7d13a3ad6f471d66546f630fd3}{count\+\_\+function\+\_\+calls\+\_\+on\+\_\+miss}} (\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$link, int level)
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{binary__tree_8c_af19e7f7d13a3ad6f471d66546f630fd3}{count\+\_\+function\+\_\+calls\+\_\+on\+\_\+miss()}} function is used to count the number of times of when calling the function, $\ast$link points to a N\+U\+LL value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{binary__tree_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{binary__tree_8c_afc39cd77e514a5049c30d8ef547a8841}{leaves}}
+\item 
+static int \mbox{\hyperlink{binary__tree_8c_abef4c1908136226cd1f2c7819785d1fa}{height\+\_\+left}}
+\item 
+static int \mbox{\hyperlink{binary__tree_8c_a5454a1ac9b12bb6fc0bc58354c0ac450}{height\+\_\+right}}
+\item 
+static int \mbox{\hyperlink{binary__tree_8c_ae0de366d2b1070a54b2b1d96775d8578}{search\+\_\+counter}}
+\item 
+static int \mbox{\hyperlink{binary__tree_8c_a66700f11d42fee2413e58dbf49c43ee1}{cost}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{binary__tree_8c_aa66657f75d8f7c468b5dcc6dd923b0b9}\label{binary__tree_8c_aa66657f75d8f7c468b5dcc6dd923b0b9}} 
+\index{binary\_tree.c@{binary\_tree.c}!tree\_node@{tree\_node}}
+\index{tree\_node@{tree\_node}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{tree\_node}{tree\_node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtree__node}{tree\+\_\+node}}
+ \mbox{\hyperlink{structtree__node}{tree\+\_\+node}}}
+
+
+
+A structure with pointers to the branches/nodes of a binary tree. 
+
+Each node of the ordered binary tree will store a long integer. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{binary__tree_8c_ab971ba184d219d34538de8f5671a6a7f}\label{binary__tree_8c_ab971ba184d219d34538de8f5671a6a7f}} 
+\index{binary\_tree.c@{binary\_tree.c}!count\_function\_calls\_on\_hit@{count\_function\_calls\_on\_hit}}
+\index{count\_function\_calls\_on\_hit@{count\_function\_calls\_on\_hit}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{count\_function\_calls\_on\_hit()}{count\_function\_calls\_on\_hit()}}
+{\footnotesize\ttfamily static int count\+\_\+function\+\_\+calls\+\_\+on\+\_\+hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$}]{link,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The \mbox{\hyperlink{binary__tree_8c_ab971ba184d219d34538de8f5671a6a7f}{count\+\_\+function\+\_\+calls\+\_\+on\+\_\+hit()}} function is used to count the number of times of when calling the function, $\ast$link points to a non N\+U\+LL value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$link} & pointer to a node \\
+\hline
+{\em level} & tree height level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{binary__tree_8c_af19e7f7d13a3ad6f471d66546f630fd3}\label{binary__tree_8c_af19e7f7d13a3ad6f471d66546f630fd3}} 
+\index{binary\_tree.c@{binary\_tree.c}!count\_function\_calls\_on\_miss@{count\_function\_calls\_on\_miss}}
+\index{count\_function\_calls\_on\_miss@{count\_function\_calls\_on\_miss}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{count\_function\_calls\_on\_miss()}{count\_function\_calls\_on\_miss()}}
+{\footnotesize\ttfamily static int count\+\_\+function\+\_\+calls\+\_\+on\+\_\+miss (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$}]{link,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The \mbox{\hyperlink{binary__tree_8c_af19e7f7d13a3ad6f471d66546f630fd3}{count\+\_\+function\+\_\+calls\+\_\+on\+\_\+miss()}} function is used to count the number of times of when calling the function, $\ast$link points to a N\+U\+LL value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$link} & pointer to a node \\
+\hline
+{\em level} & tree height level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{binary__tree_8c_afabb799b3f3aad726ca32c4f3c76b839}\label{binary__tree_8c_afabb799b3f3aad726ca32c4f3c76b839}} 
+\index{binary\_tree.c@{binary\_tree.c}!count\_leaves@{count\_leaves}}
+\index{count\_leaves@{count\_leaves}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{count\_leaves()}{count\_leaves()}}
+{\footnotesize\ttfamily static int count\+\_\+leaves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$}]{link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The \mbox{\hyperlink{binary__tree_8c_afabb799b3f3aad726ca32c4f3c76b839}{count\+\_\+leaves()}} function is used to count the number of leaves of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & pointer to a node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{binary__tree_8c_a198771fac24ab0346f447462d3a559a5}\label{binary__tree_8c_a198771fac24ab0346f447462d3a559a5}} 
+\index{binary\_tree.c@{binary\_tree.c}!insert\_node@{insert\_node}}
+\index{insert\_node@{insert\_node}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{insert\_node()}{insert\_node()}}
+{\footnotesize\ttfamily static void insert\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$$\ast$}]{link,  }\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The \mbox{\hyperlink{binary__tree_8c_a198771fac24ab0346f447462d3a559a5}{insert\+\_\+node()}} function is used to insert a node in the tree. 
+
+It is assumed that the tree does not store repeated data
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$link} & pointer to a node \\
+\hline
+{\em n} & a node to be inserted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{binary__tree_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{binary__tree_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{binary\_tree.c@{binary\_tree.c}!main@{main}}
+\index{main@{main}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Main program. 
+
+\mbox{\Hypertarget{binary__tree_8c_aa172cba2b4c4376a31441d3bb78b6868}\label{binary__tree_8c_aa172cba2b4c4376a31441d3bb78b6868}} 
+\index{binary\_tree.c@{binary\_tree.c}!search\_tree@{search\_tree}}
+\index{search\_tree@{search\_tree}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{search\_tree()}{search\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__node}{tree\+\_\+node}}$\ast$ search\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$}]{link,  }\item[{long}]{data }\end{DoxyParamCaption})}
+
+
+
+The \mbox{\hyperlink{binary__tree_8c_aa172cba2b4c4376a31441d3bb78b6868}{search\+\_\+tree()}} function is used to search for data in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$link} & pointer to a node \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{binary__tree_8c_a90064bfa0b89a9ea3b5a2294e002346f}\label{binary__tree_8c_a90064bfa0b89a9ea3b5a2294e002346f}} 
+\index{binary\_tree.c@{binary\_tree.c}!tree\_height@{tree\_height}}
+\index{tree\_height@{tree\_height}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{tree\_height()}{tree\_height()}}
+{\footnotesize\ttfamily static int tree\+\_\+height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__node}{tree\+\_\+node}} $\ast$}]{link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+@ brief The \mbox{\hyperlink{binary__tree_8c_a90064bfa0b89a9ea3b5a2294e002346f}{tree\+\_\+height()}} function is used to measure the height of the tree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & pointer to a node \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{binary__tree_8c_a66700f11d42fee2413e58dbf49c43ee1}\label{binary__tree_8c_a66700f11d42fee2413e58dbf49c43ee1}} 
+\index{binary\_tree.c@{binary\_tree.c}!cost@{cost}}
+\index{cost@{cost}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{cost}{cost}}
+{\footnotesize\ttfamily int cost\hspace{0.3cm}{\ttfamily [static]}}
+
+static variable that stores the cost of searching for an item \mbox{\Hypertarget{binary__tree_8c_abef4c1908136226cd1f2c7819785d1fa}\label{binary__tree_8c_abef4c1908136226cd1f2c7819785d1fa}} 
+\index{binary\_tree.c@{binary\_tree.c}!height\_left@{height\_left}}
+\index{height\_left@{height\_left}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{height\_left}{height\_left}}
+{\footnotesize\ttfamily int height\+\_\+left\hspace{0.3cm}{\ttfamily [static]}}
+
+static variable that stores the height on the left side of the tree \mbox{\Hypertarget{binary__tree_8c_a5454a1ac9b12bb6fc0bc58354c0ac450}\label{binary__tree_8c_a5454a1ac9b12bb6fc0bc58354c0ac450}} 
+\index{binary\_tree.c@{binary\_tree.c}!height\_right@{height\_right}}
+\index{height\_right@{height\_right}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{height\_right}{height\_right}}
+{\footnotesize\ttfamily int height\+\_\+right\hspace{0.3cm}{\ttfamily [static]}}
+
+static variable that stores the height on the left side of the tree \mbox{\Hypertarget{binary__tree_8c_afc39cd77e514a5049c30d8ef547a8841}\label{binary__tree_8c_afc39cd77e514a5049c30d8ef547a8841}} 
+\index{binary\_tree.c@{binary\_tree.c}!leaves@{leaves}}
+\index{leaves@{leaves}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{leaves}{leaves}}
+{\footnotesize\ttfamily int leaves\hspace{0.3cm}{\ttfamily [static]}}
+
+static variable that stores the number of leaves of the tree \mbox{\Hypertarget{binary__tree_8c_ae0de366d2b1070a54b2b1d96775d8578}\label{binary__tree_8c_ae0de366d2b1070a54b2b1d96775d8578}} 
+\index{binary\_tree.c@{binary\_tree.c}!search\_counter@{search\_counter}}
+\index{search\_counter@{search\_counter}!binary\_tree.c@{binary\_tree.c}}
+\doxysubsubsection{\texorpdfstring{search\_counter}{search\_counter}}
+{\footnotesize\ttfamily int search\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+static variable that stores the number of nodes found while searching for a specific one 

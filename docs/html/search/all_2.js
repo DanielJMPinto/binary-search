@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_6',['data',['../structtree__node.html#a63b1721e323cf961ef8dc317b4404dea',1,'tree_node']]]
+  ['data_5',['data',['../structtree__node.html#a63b1721e323cf961ef8dc317b4404dea',1,'tree_node']]]
 ];

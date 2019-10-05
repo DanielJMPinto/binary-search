@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tree_5fheight_31',['tree_height',['../binary__tree_8c.html#a90064bfa0b89a9ea3b5a2294e002346f',1,'binary_tree.c']]]
+  ['tree_5fheight_28',['tree_height',['../binary__tree_8c.html#a90064bfa0b89a9ea3b5a2294e002346f',1,'binary_tree.c']]]
 ];
