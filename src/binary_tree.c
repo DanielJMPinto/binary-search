@@ -261,7 +261,7 @@ static int count_function_calls_on_miss(tree_node *link,int level)
 //   rand_perm(n,&a[0]);
 //
 
-/*static void rand_perm(int n,int *a)
+static void rand_perm(int n,int *a)
 {
   int i,j,k;
 
@@ -274,7 +274,7 @@ static int count_function_calls_on_miss(tree_node *link,int level)
     a[i] = a[j];
     a[j] = k;
   }
-}*/
+}
 
 
 //
@@ -361,7 +361,7 @@ int main(int argc,char **argv)
     for(int n_experiment = 0;n_experiment < n_experiments;n_experiment++)
     {
       
-      //rand_perm(n,&a[0]);
+      rand_perm(n,&a[0]);
       root = NULL;
       for(int i = 0;i < n;i++)
       {
