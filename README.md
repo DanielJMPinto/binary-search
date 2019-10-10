@@ -1,5 +1,5 @@
 # Binary Tree
-Binary Tree
+Implementation of a binary tree search using c
 
 # Build the Image
 ```bash
